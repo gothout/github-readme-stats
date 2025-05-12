@@ -1,14 +1,15 @@
 {
-  "functions": {
-    "api/*.js": {
-      "memory": 128,
-      "maxDuration": 10
-    }
-  },
-  "redirects": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/",
-      "destination": "https://github.com/anuraghazra/github-readme-stats"
+      "src": "express.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "express.js"
     }
   ]
 }
